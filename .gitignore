@@ -1,0 +1,22 @@
+# Dataset files
+Dataset .csv
+Dataset.csv
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
