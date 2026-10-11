@@ -17,7 +17,7 @@ Develop a machine learning model to classify restaurants based on their cuisines
 - Average cuisines per restaurant: 2.07
 - 64.43% of restaurants have multiple cuisines
 
-The dataset file is intentionally **not included** in this repository. The notebook expects the dataset at `/content/Dataset .csv` when run in Google Colab.
+The current repository contains `Dataset .csv`, and the notebook expects this filename at `/content/Dataset .csv` in Google Colab. **Before sharing the public repository, confirm that the dataset's source terms permit redistribution.** If not, remove the CSV from the repository and upload it privately to Colab; `.gitignore` alone does not remove a file that has already been committed.
 
 ## Methodology
 
@@ -120,22 +120,43 @@ Potential improvements include:
 
 ## How to Run
 
-1. Open the notebook in Google Colab.
-2. Upload the provided restaurant dataset.
-3. Ensure the uploaded file is named `Dataset .csv`.
-4. Run the notebook from the beginning using **Runtime → Run all**.
-5. Review the generated validation, test, and per-cuisine results.
+### Google Colab
+
+1. Open `Task_3_Cuisine_Classification.ipynb` in Google Colab.
+2. Ensure `Dataset .csv` is available in `/content/` (upload it if needed).
+3. Run the notebook from the beginning using **Runtime → Run all**. The notebook installs `iterative-stratification` for multi-label stratified splitting.
+4. Review validation/test metrics and per-cuisine diagnostics.
+
+### Local Jupyter
+
+1. Install dependencies with `pip install -r requirements.txt`.
+2. Place the CSV in the notebook's expected location or update the dataset path.
+3. Run the notebook from top to bottom.
+
+## Visual Results
+
+### Model Comparison
+![Classification model comparison](model-comparison.png)
+
+The notebook compares precision, recall, and F1 metrics for the evaluated models.
+
+### Performance Across Cuisine Support Groups
+![Performance by cuisine support group](performance-by-label-support.png)
+
+This plot highlights how model performance varies with the number of training examples available for each cuisine label.
+
+### Per-Cuisine Performance
+![Top cuisines by F1 score](top-cuisine-f1.png)
+
+The per-cuisine view makes it easier to see differences in performance between individual labels; strong results on common cuisines do not imply equally strong performance on rare cuisines.
 
 ## Repository Contents
 
-```text
-Cognifyz-Task-3-Cuisine-Classification/
-├── README.md
-├── Task_3_Cognifyz_Cuisine_Classification.ipynb
-├── requirements.txt
-├── .gitignore
-└── results/
-```
+- `Task_3_Cuisine_Classification.ipynb` — executed notebook with data audit, multi-label modeling, evaluation, and diagnostic visualizations.
+- `README.md` — project objective, methodology, reported results, and limitations.
+- `requirements.txt` — Python dependencies, including multi-label stratification support.
+- `.gitignore` — common generated files and local artifacts to ignore.
+- `Dataset .csv` — dataset currently tracked in the repository; confirm redistribution rights before sharing.
 
 ## Internship
 
